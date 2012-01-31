@@ -1,0 +1,31 @@
+usage
+
+new imgAnimator(container, imgArray, options);
+
+container: Contains image as css property "background-image" which should be HTML Element
+
+imgArray: Array of showing Images
+
+options: 
+    loop: repeat animation or not
+    startOnLoad: start animation when images load complete
+    duration: animating duration
+    fps: duration of a image showing
+        (if options.loop set "false", fps defined automatically)
+    preprocess: function which is executed before animation
+    callback: function which is executed after animation
+
+var anim = new imgAnimator(document.getElementById("container"),
+      ["test1.png","test2.png","test3.png","test4.png","test5.png"],
+      {
+        loop: true,
+        startOnLoad: true,
+        duration: 2000,
+        fps: 100,
+        preprocess:function(){console.log("loading...");},
+        callback: function(){console.log("animation finished!");}
+      }
+    );
+
+
+

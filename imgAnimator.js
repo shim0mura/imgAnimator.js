@@ -39,7 +39,7 @@ function imgAnimator(cont, imgs, options){
       curFrame++;
       lTime = cur;
       style.backgroundImage = "url(" + frames[(curFrame)%l].src + ")";
-      style.backgroundPosition = easing(curFrame);
+      style.backgroundPosition = easing(curFrame) || "";
     }
     if(checkStop(cur)){
       stop();
